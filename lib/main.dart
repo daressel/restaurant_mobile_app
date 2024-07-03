@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_mobile_app/feature/card/test_card.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,21 +58,16 @@ class _MyHomePageState extends State<MyHomePage> {
         itemCount: 100,
         padding:
             const EdgeInsets.only(bottom: 80, left: 15, right: 15, top: 15),
-        itemBuilder: (context, index) => Container(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(10.0),
-                  topRight: Radius.circular(10.0),
-                  bottomLeft: Radius.circular(10.0),
-                  bottomRight: Radius.circular(10.0),
-                ),
-                child: Container(
-                  padding: const EdgeInsets.only(bottom: 10),
-                  height: 40,
-                  color: Colors.green,
-                  child: const Center(child: Text('some')),
-                ))),
+        itemBuilder: (context, index) {
+          int some = 0;
+          return Container(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: TestCard(
+                textToShow: 'qwe$index$some',
+                testCallback: () => {some++},
+                some: index,
+              ));
+        },
       ),
     );
   }
@@ -128,6 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
 // import 'dart:convert';
 // import 'package:http/http.dart' as http;
 // import 'package:flutter/material.dart';
