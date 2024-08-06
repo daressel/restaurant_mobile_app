@@ -47,7 +47,8 @@ class _TestCardState extends State<TestCard> {
           Row(
             children: [
               IconButton(
-                  onPressed: () => {qwe = 123}, icon: Icon(Icons.bookmark_add))
+                  onPressed: () => {qwe = 123},
+                  icon: const Icon(Icons.bookmark_add))
             ],
           ),
         ]),
