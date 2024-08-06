@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_mobile_app/feature/card_list/index.dart';
+import 'package:restaurant_mobile_app/feature/detailedView/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +14,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: {
+        'some': (BuildContext context) => MyHomePage(),
+        'other': (BuildContext context) {
+          return const DetailedView(name: 'name: qwe');
+        },
+      },
       home: MyHomePage(),
     );
   }

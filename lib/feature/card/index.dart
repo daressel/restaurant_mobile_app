@@ -30,25 +30,28 @@ class _TestCardState extends State<TestCard> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: const BoxDecoration(
-          color: Colors.amber,
-          borderRadius: BorderRadius.all(Radius.circular(12))),
-      height: height * 0.7,
-      width: width * 0.1,
-      child: Column(children: [
-        Container(
-          alignment: Alignment.centerLeft,
-          child: Text(widget.textToShow),
-        ),
-        Row(
-          children: [
-            IconButton(
-                onPressed: () => {qwe = 123}, icon: Icon(Icons.bookmark_add))
-          ],
-        ),
-      ]),
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, 'other'),
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: const BoxDecoration(
+            color: Colors.amber,
+            borderRadius: BorderRadius.all(Radius.circular(12))),
+        height: height * 0.4,
+        width: width * 0.1,
+        child: Column(children: [
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Text(widget.textToShow),
+          ),
+          Row(
+            children: [
+              IconButton(
+                  onPressed: () => {qwe = 123}, icon: Icon(Icons.bookmark_add))
+            ],
+          ),
+        ]),
+      ),
     );
   }
 }
